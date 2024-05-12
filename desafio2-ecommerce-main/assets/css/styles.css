@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+
+
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "menu main"
+        "footer footer";
+    width: 100%;
+    height: 100vh;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-sm {
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.txt-md {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
+
+.txt-lg {
+    font-size: 1.5rem;
+}
+
+.txt-light {
+    font-weight: 300;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background-color: #f0f1f2;
+    color: #000;
+}
+
+.btn-circle {
+    text-decoration: none;
+    padding: 0.7rem;
+    border-radius: 50%;
+}
+
+.btn-circle:hover {
+    background-color: #feeb28;
+}
+
+.divider {
+    border-bottom: 2px solid #f0f1f2;
+    margin: 1rem 0;
+  }
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    border-bottom: 2px solid #f0f1f2;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #0083C2;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 100%;
+    margin: auto 1rem;
+}
+
+.search {
+    position: relative;
+    width: 45%;
+}
+
+.search input[type="text"] {
+    width: 100%;
+    background-color: #f0f1f2;
+    box-sizing: border-box;
+    padding: 0.7rem 3rem;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+.search input[type="text"]:hover {
+    background-color: #fff;
+    border: 1px solid rgba(0, 131, 194, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 131, 194, 0.1);
+    outline: none;
+}
+
+.search i {
+    position: absolute;
+    left: 0;
+    padding: 0.7rem 1rem;
+}
+
+/* SIDEBAR */
+
+.menu {
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #f0f1f2;
+    padding: 1rem;
+}
+
+.menu-products, .menu-filters {
+    list-style: none;
+    width: 100%;
+}
+
+.menu li a {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.menu-filters a{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MAIN */
+
+.main {
+    grid-area: main;
+    padding: 1rem;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    border: 1px solid #f0f1f2;
+    border-radius: 0.5rem;
+    color: #4e4e4e;
+    padding: 1rem;
+}
+
+.item-card:hover {
+    border: 1px solid #0083C2;
+    box-shadow: 0 0 0 2px rgba(0, 131, 194, 0.1);
+}
+
+.item-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+.item-img {
+    width: 8rem;
+    height: 8rem;
+    padding: 1.5rem;
+    object-fit: cover;
+}
+
+.item-btn {
+    width: 60%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    background-color: #0083C2;
+    border: 1px solid #0083C2;
+    color: #fff;
+}
+
+.item-btn:hover {
+    background-color: #f0f1f2;
+    border: 1px solid #0083C2;
+    color: #000;
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    background: #0083C2;
+    padding: 0.8rem;
+    color: #fff;
+}
+
+
+
+
+/* --------------------------------------- */
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1400px){
+    .items{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width: 1200px){
+    .items{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width: 992px){
+    .header {
+        display: grid;
+        grid-template-areas: "logo user" "search search";
+        padding-top: 0.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .search {
+        grid-area: search;
+        padding-top: 0.3rem;
+        width: auto;
+    }
+
+    .user {
+        grid-area: user;
+    }
+
+    .items{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .items{
+        grid-template-columns: 1fr;
+    }
+    
+}
